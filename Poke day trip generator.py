@@ -1,26 +1,6 @@
-print("Hello and welcome to the wonderful world of pokemon, lets get you all set up for a fantastic journey!")
-
 import random
+
 places_to_visit = ["Kanto", "Jhoto", "Hoenn", "Sinnoh", "Galar"]
-
-def region_picker(): # will pick the overall region to set the whole trip
-    location_picked = False
-    poke_places = random.choice(places_to_visit)
-    travel_location = input('Would you like to visit the region of ' + f'{poke_places}? ' + 'Please select y/n ')
-    if travel_location == 'y':
-        location_picked = True
-        return poke_places
-    while location_picked == False:
-        poke_places = random.choice(places_to_visit)
-        travel_location = input('I get it, that region is not for everyone. What about ' + f'{poke_places}? ' + 'Please select y/n ')
-        if travel_location == 'y':
-            location_picked = True
-            
-            return poke_places
-
-picked_region = region_picker()
-print(picked_region)
-print('Thats a great region, lets figure out the details now!')
 
 Kanto_food = ['cubones home cooking', 'magmars BBQ', 'the snotlax buffet', 'tangelas stir fry']
 Kanto_transport = ['fly by dragonite', 'teleport with abra', 'swim with lapras', 'tunnel with diglet']
@@ -42,10 +22,108 @@ Galar_food = ['Coalossals BBQ', 'Appletons pastries', 'Cramorants catch', 'sinis
 Galar_transport = ['Corviknight flights', 'ride on a Dubwool', 'ride on a Copperajah', 'ride on a Spectrier']
 Galar_entertainment = ['Meet the champion Leon', 'go to a toxtricity concert', 'roam the wild land', 'attend the champion cup']
 
+print("Hello and welcome to the wonderful world of pokemon, lets get you all set up for a fantastic journey!")
 
-def entertainment_picker(destinaiton):
-    if destinaiton == "Kanto": # this is where the logic will go based on Kanto selection
-        
-        pass
+def region_picker(): # This will pick the overall region to set the whole trip
+    location_picked = False
+    poke_places = random.choice(places_to_visit)
+    travel_location = input('Would you like to visit the region of ' + f'{poke_places}? ' + 'Please select y/n ')
+    if travel_location == 'y':
+        location_picked = True
+        return poke_places
+    while location_picked == False:
+        poke_places = random.choice(places_to_visit)
+        travel_location = input('I get it, that region is not for everyone. What about ' + f'{poke_places}? ' + 'Please select y/n ')
+        if travel_location == 'y':
+            location_picked = True
+            
+            return poke_places
 
-picked_entertainment = entertainment_picker(picked_region)
+picked_region = region_picker()
+print(picked_region)
+print('Thats a great region, lets figure out the details now!')
+
+
+
+
+def food_picker(destinaiton): # this is where the logic will go based on region selection
+    if destinaiton == "Kanto": 
+        food_picked = False
+        poke_food_kanto = random.choice(Kanto_food)
+        food_location = input('Now lets pick a place to eat for the day. Would you like to try ' + f'{poke_food_kanto}? ' + 'Please select y/n ')
+        if food_location == 'y':
+            food_picked = True
+            return poke_food_kanto
+
+        while food_picked == False:
+            poke_food_kanto = random.choice(Kanto_food)
+            food_location = input('I get it, that place is not for everyone. What about ' + f'{poke_food_kanto}? ' + 'Please select y/n ')
+            if food_location == 'y':
+                food_picked = True
+                return poke_food_kanto
+
+    if destinaiton == "Jhoto": 
+        food_picked = False
+        poke_food_Jhoto = random.choice(Jhoto_food)
+        food_location = input('Now lets pick a place to eat for the day. Would you like to try ' + f'{poke_food_Jhoto}? ' + 'Please select y/n ')
+        if food_location == 'y':
+            food_picked = True
+            return poke_food_Jhoto
+
+        while food_picked == False:
+            poke_food_Jhoto = random.choice(Jhoto_food)
+            food_location = input('I get it, that place is not for everyone. What about ' + f'{poke_food_Jhoto}? ' + 'Please select y/n ')
+            if food_location == 'y':
+                food_picked = True
+                return poke_food_Jhoto
+
+    if destinaiton == "Hoenn": 
+        food_picked = False
+        poke_food_Hoenn = random.choice(Hoenn_food)
+        food_location = input('Now lets pick a place to eat for the day. Would you like to try ' + f'{poke_food_Hoenn}? ' + 'Please select y/n ')
+        if food_location == 'y':
+            food_picked = True
+            return poke_food_Hoenn
+
+        while food_picked == False:
+            poke_food_Hoenn = random.choice(Hoenn_food)
+            food_location = input('I get it, that place is not for everyone. What about ' + f'{poke_food_Hoenn}? ' + 'Please select y/n ')
+            if food_location == 'y':
+                food_picked = True
+                return poke_food_Hoenn
+    
+    if destinaiton == "Sinnoh": 
+        food_picked = False
+        poke_food_Sinnoh = random.choice(Sinnoh_food)
+        food_location = input('Now lets pick a place to eat for the day. Would you like to try ' + f'{poke_food_Sinnoh}? ' + 'Please select y/n ')
+        if food_location == 'y':
+            food_picked = True
+            return poke_food_Sinnoh
+
+        while food_picked == False:
+            poke_food_Sinnoh = random.choice(Sinnoh_food)
+            food_location = input('I get it, that place is not for everyone. What about ' + f'{poke_food_Sinnoh}? ' + 'Please select y/n ')
+            if food_location == 'y':
+                food_picked = True
+                return poke_food_Sinnoh
+
+    if destinaiton == "Galar": 
+        food_picked = False
+        poke_food_Galar = random.choice(Galar_food)
+        food_location = input('Now lets pick a place to eat for the day. Would you like to try ' + f'{poke_food_Galar}? ' + 'Please select y/n ')
+        if food_location == 'y':
+            food_picked = True
+            return poke_food_Galar
+
+        while food_picked == False:
+            poke_food_Galar = random.choice(Galar_food)
+            food_location = input('I get it, that place is not for everyone. What about ' + f'{poke_food_Galar}? ' + 'Please select y/n ')
+            if food_location == 'y':
+                food_picked = True
+                return poke_food_Galar
+    
+
+picked_food = food_picker(picked_region)
+print (picked_food)
+Print ('Great Choice, they really do have the best rood in the region!')
+
