@@ -1,3 +1,4 @@
+from optparse import TitledHelpFormatter
 import random
 
 places_to_visit = ["Kanto", "Jhoto", "Hoenn", "Sinnoh", "Galar"]
@@ -46,7 +47,7 @@ print('Thats a great region, lets figure out the details now!')
 
 
 
-def food_picker(destinaiton): # this is where the logic will go based on region selection
+def food_picker(destinaiton): # this is where the logic for the food will go based on region selection
     if destinaiton == "Kanto": 
         food_picked = False
         poke_food_kanto = random.choice(Kanto_food)
@@ -124,6 +125,166 @@ def food_picker(destinaiton): # this is where the logic will go based on region 
     
 
 picked_food = food_picker(picked_region)
-print (picked_food)
-Print ('Great Choice, they really do have the best rood in the region!')
+print(picked_food)
+print('Great Choice, they really do have the best rood in the region!')
+
+
+def travel_picker(destinaiton): # this is where the logic for the travel will go based on region selection
+    if destinaiton == "Kanto": 
+        travel_picked = False
+        poke_travel_kanto = random.choice(Kanto_transport)
+        travel_choice = input('Now lets see how we will get around. Would you like to try ' + f'{poke_travel_kanto}? ' + 'Please select y/n ')
+        if travel_choice == 'y':
+            travel_picked = True
+            return poke_travel_kanto
+
+        while travel_picked == False:
+            poke_travel_kanto = random.choice(Kanto_transport)
+            travel_choice = input('I get it, that meathod isnt for everyone. What about ' + f'{poke_travel_kanto}? ' + 'Please select y/n ')
+            if travel_choice == 'y':
+                travel_picked = True
+                return poke_travel_kanto
+
+    if destinaiton == "Jhoto": 
+        travel_picked = False
+        poke_travel_Jhoto = random.choice(Jhoto_transport)
+        travel_choice = input('Now lets see how we will get around. Would you like to try ' + f'{poke_travel_Jhoto}? ' + 'Please select y/n ')
+        if travel_choice == 'y':
+            travel_picked = True
+            return poke_travel_Jhoto
+
+        while travel_picked == False:
+            poke_travel_Jhoto = random.choice(Jhoto_transport)
+            travel_choice = input('I get it, that meathod isnt for everyone. What about ' + f'{poke_travel_Jhoto}? ' + 'Please select y/n ')
+            if travel_choice == 'y':
+                travel_picked = True
+                return poke_travel_Jhoto
+
+    if destinaiton == "Hoenn": 
+        travel_picked = False
+        poke_travel_Hoenn = random.choice(Hoenn_transport)
+        travel_choice = input('Now lets see how we will get around. Would you like to try ' + f'{poke_travel_Hoenn}? ' + 'Please select y/n ')
+        if travel_choice == 'y':
+            travel_picked = True
+            return poke_travel_Hoenn
+
+        while travel_picked == False:
+            poke_travel_Hoenn = random.choice(Hoenn_transport)
+            travel_choice = input('I get it, that meathod isnt for everyone. What about ' + f'{poke_travel_Hoenn}? ' + 'Please select y/n ')
+            if travel_choice == 'y':
+                travel_picked = True
+                return poke_travel_Hoenn
+    
+    if destinaiton == "Sinnoh": 
+        travel_picked = False
+        poke_travel_Sinnoh = random.choice(Sinnoh_transport)
+        travel_choice = input('Now lets see how we will get around. Would you like to try ' + f'{poke_travel_Sinnoh}? ' + 'Please select y/n ')
+        if travel_choice == 'y':
+            travel_picked = True
+            return poke_travel_Sinnoh
+
+        while travel_picked == False:
+            poke_travel_Sinnoh = random.choice(Sinnoh_transport)
+            travel_choice = input('I get it, that meathod isnt for everyone. What about ' + f'{poke_travel_Sinnoh}? ' + 'Please select y/n ')
+            if travel_choice == 'y':
+                travel_picked = True
+                return poke_travel_Sinnoh
+
+    if destinaiton == "Galar": 
+        travel_picked = False
+        poke_travel_Galar = random.choice(Galar_transport)
+        travel_choice = input('Now lets see how we will get around. Would you like to try ' + f'{poke_travel_Galar}? ' + 'Please select y/n ')
+        if travel_choice == 'y':
+            travel_picked = True
+            return poke_travel_Galar
+
+        while travel_picked == False:
+            poke_travel_Galar = random.choice(Galar_transport)
+            travel_choice = input('I get it, that meathod isnt for everyone. What about ' + f'{poke_travel_Galar}? ' + 'Please select y/n ')
+            if travel_choice == 'y':
+                travel_picked = True
+                return poke_travel_Galar
+    
+
+picked_travel = travel_picker(picked_region)
+print (picked_travel)
+print ('Great Choice, that truly is the only way to get around!')
+
+def entertainment_picker(destinaiton): # this is where the logic for the entertainment will go based on region selection
+    if destinaiton == "Kanto": 
+        entertainment_picked = False
+        poke_entertainment_kanto = random.choice(kanto_entertainment)
+        entertainment_choice = input('Now lets see what we will do for fun. How does ' + f'{poke_entertainment_kanto} sound? ' + 'Please select y/n ')
+        if entertainment_choice == 'y':
+            entertainment_picked = True
+            return poke_entertainment_kanto
+
+        while entertainment_picked == False:
+            poke_entertainment_kanto = random.choice(Kanto_transport)
+            entertainment_choice = input('Youre right thats too boring. What about ' + f'{poke_entertainment_kanto}? ' + 'Please select y/n ')
+            if entertainment_choice == 'y':
+                entertainment_picked = True
+                return poke_entertainment_kanto
+    if destinaiton == "Jhoto": 
+        entertainment_picked = False
+        poke_entertainment_Jhoto = random.choice(Jhoto_entertainment)
+        entertainment_choice = input('Now lets see what we will do for fun. How does ' + f'{poke_entertainment_Jhoto} sound? ' + 'Please select y/n ')
+        if entertainment_choice == 'y':
+            entertainment_picked = True
+            return poke_entertainment_Jhoto
+
+        while entertainment_picked == False:
+            poke_entertainment_Jhoto = random.choice(Jhoto_transport)
+            entertainment_choice = input('Youre right thats too boring. What about ' + f'{poke_entertainment_Jhoto}? ' + 'Please select y/n ')
+            if entertainment_choice == 'y':
+                entertainment_picked = True
+                return poke_entertainment_Jhoto
+    if destinaiton == "Hoenn": 
+        entertainment_picked = False
+        poke_entertainment_Hoenn = random.choice(Hoenn_entertainment)
+        entertainment_choice = input('Now lets see what we will do for fun. How does ' + f'{poke_entertainment_Hoenn} sound? ' + 'Please select y/n ')
+        if entertainment_choice == 'y':
+            entertainment_picked = True
+            return poke_entertainment_Hoenn
+
+        while entertainment_picked == False:
+            poke_entertainment_Hoenn = random.choice(Hoenn_transport)
+            entertainment_choice = input('Youre right thats too boring. What about ' + f'{poke_entertainment_Hoenn}? ' + 'Please select y/n ')
+            if entertainment_choice == 'y':
+                entertainment_picked = True
+                return poke_entertainment_Hoenn
+    if destinaiton == "Sinnoh": 
+        entertainment_picked = False
+        poke_entertainment_Sinnoh = random.choice(Sinnoh_entertainment)
+        entertainment_choice = input('Now lets see what we will do for fun. How does ' + f'{poke_entertainment_Sinnoh} sound? ' + 'Please select y/n ')
+        if entertainment_choice == 'y':
+            entertainment_picked = True
+            return poke_entertainment_Sinnoh
+
+        while entertainment_picked == False:
+            poke_entertainment_Sinnoh = random.choice(Sinnoh_transport)
+            entertainment_choice = input('Youre right thats too boring. What about ' + f'{poke_entertainment_Sinnoh}? ' + 'Please select y/n ')
+            if entertainment_choice == 'y':
+                entertainment_picked = True
+                return poke_entertainment_Sinnoh
+    if destinaiton == "Galar": 
+        entertainment_picked = False
+        poke_entertainment_Galar = random.choice(Galar_entertainment)
+        entertainment_choice = input('Now lets see what we will do for fun. How does ' + f'{poke_entertainment_Galar} sound? ' + 'Please select y/n ')
+        if entertainment_choice == 'y':
+            entertainment_picked = True
+            return poke_entertainment_Galar
+
+        while entertainment_picked == False:
+            poke_entertainment_Galar = random.choice(Galar_transport)
+            entertainment_choice = input('Youre right thats too boring. What about ' + f'{poke_entertainment_Galar}? ' + 'Please select y/n ')
+            if entertainment_choice == 'y':
+                entertainment_picked = True
+                return poke_entertainment_Galar
+
+picked_entertianment = entertainment_picker(picked_region)
+print (picked_entertianment)
+print ('Great Choice, I hear thats only availabe to do for a short time!')
+
+print('Now that we have all of our choices lets review')
 
