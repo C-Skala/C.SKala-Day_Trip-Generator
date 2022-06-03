@@ -1,11 +1,14 @@
+from cProfile import run
+from multiprocessing.pool import RUN
 from optparse import TitledHelpFormatter
 import random
+from tkinter import Y
 
 places_to_visit = ["Kanto", "Jhoto", "Hoenn", "Sinnoh", "Galar"]
 
-Kanto_food = ['cubones home cooking', 'magmars BBQ', 'the snotlax buffet', 'tangelas stir fry']
+Kanto_food = ['cubones home cooking', 'magmars BBQ', 'the snorlax buffet', 'tangelas stir fry']
 Kanto_transport = ['fly by dragonite', 'teleport with abra', 'swim with lapras', 'tunnel with diglet']
-kanto_entertainment = ['meet professor oak and pick a starter pokemon', 'win some cash at celedon game center', 'battle the elite four', 'catch some pokemon in the safati zone']
+kanto_entertainment = ['meet professor oak and pick a starter pokemon', 'win some cash at celedon game center', 'battle the elite four', 'catch some pokemon in the safari zone']
 
 Jhoto_food = ['miltanks ice cream', 'shuckles seafood', 'steelixs kabobs', 'bellosems vegan specials']
 Jhoto_transport = ['fly on noctowl', 'swim on Feraligatr', 'teleport with stantler', 'ride on raikou']
@@ -23,7 +26,8 @@ Galar_food = ['Coalossals BBQ', 'Appletons pastries', 'Cramorants catch', 'sinis
 Galar_transport = ['Corviknight flights', 'ride on a Dubwool', 'ride on a Copperajah', 'ride on a Spectrier']
 Galar_entertainment = ['Meet the champion Leon', 'go to a toxtricity concert', 'roam the wild land', 'attend the champion cup']
 
-print("Hello and welcome to the wonderful world of pokemon, lets get you all set up for a fantastic journey!")
+print("Hello and welcome to the wonderful world of Pokemon, lets get you all set up for a fantastic journey!")
+print("")
 
 def region_picker(): # This will pick the overall region to set the whole trip
     location_picked = False
@@ -43,6 +47,7 @@ def region_picker(): # This will pick the overall region to set the whole trip
 picked_region = region_picker()
 print(picked_region)
 print('Thats a great region, lets figure out the details now!')
+print("")
 
 
 
@@ -126,7 +131,8 @@ def food_picker(destinaiton): # this is where the logic for the food will go bas
 
 picked_food = food_picker(picked_region)
 print(picked_food)
-print('Great Choice, they really do have the best rood in the region!')
+print('Great Choice, they really do have the best food in the region!')
+print("")
 
 
 def travel_picker(destinaiton): # this is where the logic for the travel will go based on region selection
@@ -209,6 +215,7 @@ def travel_picker(destinaiton): # this is where the logic for the travel will go
 picked_travel = travel_picker(picked_region)
 print (picked_travel)
 print ('Great Choice, that truly is the only way to get around!')
+print("")
 
 def entertainment_picker(destinaiton): # this is where the logic for the entertainment will go based on region selection
     if destinaiton == "Kanto": 
@@ -220,7 +227,7 @@ def entertainment_picker(destinaiton): # this is where the logic for the enterta
             return poke_entertainment_kanto
 
         while entertainment_picked == False:
-            poke_entertainment_kanto = random.choice(Kanto_transport)
+            poke_entertainment_kanto = random.choice(kanto_entertainment)
             entertainment_choice = input('Youre right thats too boring. What about ' + f'{poke_entertainment_kanto}? ' + 'Please select y/n ')
             if entertainment_choice == 'y':
                 entertainment_picked = True
@@ -234,7 +241,7 @@ def entertainment_picker(destinaiton): # this is where the logic for the enterta
             return poke_entertainment_Jhoto
 
         while entertainment_picked == False:
-            poke_entertainment_Jhoto = random.choice(Jhoto_transport)
+            poke_entertainment_Jhoto = random.choice(Jhoto_entertainment)
             entertainment_choice = input('Youre right thats too boring. What about ' + f'{poke_entertainment_Jhoto}? ' + 'Please select y/n ')
             if entertainment_choice == 'y':
                 entertainment_picked = True
@@ -248,7 +255,7 @@ def entertainment_picker(destinaiton): # this is where the logic for the enterta
             return poke_entertainment_Hoenn
 
         while entertainment_picked == False:
-            poke_entertainment_Hoenn = random.choice(Hoenn_transport)
+            poke_entertainment_Hoenn = random.choice(Hoenn_entertainment)
             entertainment_choice = input('Youre right thats too boring. What about ' + f'{poke_entertainment_Hoenn}? ' + 'Please select y/n ')
             if entertainment_choice == 'y':
                 entertainment_picked = True
@@ -262,7 +269,7 @@ def entertainment_picker(destinaiton): # this is where the logic for the enterta
             return poke_entertainment_Sinnoh
 
         while entertainment_picked == False:
-            poke_entertainment_Sinnoh = random.choice(Sinnoh_transport)
+            poke_entertainment_Sinnoh = random.choice(Sinnoh_entertainment)
             entertainment_choice = input('Youre right thats too boring. What about ' + f'{poke_entertainment_Sinnoh}? ' + 'Please select y/n ')
             if entertainment_choice == 'y':
                 entertainment_picked = True
@@ -276,7 +283,7 @@ def entertainment_picker(destinaiton): # this is where the logic for the enterta
             return poke_entertainment_Galar
 
         while entertainment_picked == False:
-            poke_entertainment_Galar = random.choice(Galar_transport)
+            poke_entertainment_Galar = random.choice(Galar_entertainment)
             entertainment_choice = input('Youre right thats too boring. What about ' + f'{poke_entertainment_Galar}? ' + 'Please select y/n ')
             if entertainment_choice == 'y':
                 entertainment_picked = True
@@ -285,6 +292,33 @@ def entertainment_picker(destinaiton): # this is where the logic for the enterta
 picked_entertianment = entertainment_picker(picked_region)
 print (picked_entertianment)
 print ('Great Choice, I hear thats only availabe to do for a short time!')
+print("")
 
 print('Now that we have all of our choices lets review')
+print("")
 
+print('region: '+ f'{picked_region}')
+print('food: '+f'{picked_food}')
+print('transportation: '+ f'{picked_travel}')
+print('entertainment: '+ f'{picked_entertianment}')
+print("")
+
+confirm_trip = False
+while confirm_trip == False:
+    confirm_input = input('is this acceptable? please enter y/n ')
+    print("")
+    if confirm_input == 'y':
+        print('Great! you will be traveling to the ' + f'{picked_region}.'+'While there you will dine at '+f'{picked_food}. ' + 'You will travel with ' + f'{picked_travel}. ' + 'Finally you will have the form of entertainment of ' + f'{picked_entertianment}. '+ 'We hope you enjoy your trip and come back to use us again!')
+        confirm_trip = True        
+    elif confirm_input == 'n': # If no they will be prompted to answer all the questions again to make sure they are happy with their choice.
+        picked_region = region_picker()
+        picked_food = food_picker(picked_region)
+        picked_travel = travel_picker(picked_region)
+        picked_entertianment = entertainment_picker(picked_region)
+        print('Now that we have all of our choices lets review')
+        print("")
+        print('region: '+ f'{picked_region}')
+        print('food: '+f'{picked_food}')
+        print('transportation: '+ f'{picked_travel}')
+        print('entertainment: '+ f'{picked_entertianment}')
+        print("")
