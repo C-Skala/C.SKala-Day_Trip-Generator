@@ -6,21 +6,21 @@ from tkinter import Y
 
 places_to_visit = ["Kanto", "Jhoto", "Hoenn", "Sinnoh", "Galar"]
 
-Kanto_food = ['cubones home cooking', 'magmars BBQ', 'the snorlax buffet', 'tangelas stir fry']
-Kanto_transport = ['fly by dragonite', 'teleport with abra', 'swim with lapras', 'tunnel with diglet']
-kanto_entertainment = ['meet professor oak and pick a starter pokemon', 'win some cash at celedon game center', 'battle the elite four', 'catch some pokemon in the safari zone']
+Kanto_food = ['Cubones home cooking', 'Magmars BBQ', 'The Snorlax buffet', 'Tangelas stir fry']
+Kanto_transport = ['fly with Dragonite', 'teleport with Abra', 'swim with Lapras', 'tunnel with Diglet']
+kanto_entertainment = ['meet professor Oak and pick a starter pokemon', 'win some cash at Celedon game center', 'battle the elite four', 'catch some pokemon in the Safari Zone']
 
-Jhoto_food = ['miltanks ice cream', 'shuckles seafood', 'steelixs kabobs', 'bellosems vegan specials']
-Jhoto_transport = ['fly on noctowl', 'swim on Feraligatr', 'teleport with stantler', 'ride on raikou']
-Jhoto_entertainment = ['pick a starter with professor elm', 'battle the elite four', 'catch a shiny red Gyrados', 'catch the unknown alphabet']
+Jhoto_food = ['Miltanks ice cream', 'Shuckles seafood', 'Steelixs kabobs', 'Bellosems vegan specials']
+Jhoto_transport = ['fly on Noctowl', 'swim on Feraligatr', 'teleport with Stantler', 'ride on Raikou']
+Jhoto_entertainment = ['pick a starter with professor Elm', 'battle the elite four', 'catch a shiny red Gyrados', 'catch the Unknown alphabet']
 
 Hoenn_food = ['Ludicolos cantina', 'Crawdaunts crawfish boil', 'Spindas bar and grill', 'Hariyamas sushi hut' ]
 Hoenn_transport = ['teleport with Gardevoir', 'fly with Flygon', 'float with Metagross', 'swim with Kygore']
 Hoenn_entertainment = ['get a starter from Professor Birch', 'fight team Magma', 'fight team Aqua', 'fight the elite four']
 
-Sinnoh_food = ['Munchlaxs bed and breakfast', 'carnivines not so vegan burger joint', 'cherrims fruit palace', 'bidoofs sushi on the log']
-Sinnoh_transport = ['dig with garchomp', 'fly with staraptor', 'teleport with dialga', 'through dimensions with Arceus']
-Sinnoh_entertainment = ['get a starter from professor rowan', 'fight the elite four', 'catch a shaymin', 'discover the secrets of the regis']
+Sinnoh_food = ['Munchlaxs bed and breakfast', 'Carnivines not so vegan burger joint', 'Cherrims fruit palace', 'Bidoofs sushi on the log']
+Sinnoh_transport = ['dig with Garchomp', 'fly with Staraptor', 'teleport with Dialga', 'through dimensions with Arceus']
+Sinnoh_entertainment = ['get a starter from professor Rowan', 'fight the elite four', 'catch a Shaymin', 'discover the secrets of the Regis']
 
 Galar_food = ['Coalossals BBQ', 'Appletons pastries', 'Cramorants catch', 'sinisteas cafe']
 Galar_transport = ['Corviknight flights', 'ride on a Dubwool', 'ride on a Copperajah', 'ride on a Spectrier']
@@ -45,6 +45,7 @@ def region_picker(): # This will pick the overall region to set the whole trip
             return poke_places
 
 picked_region = region_picker()
+print("")
 print(picked_region)
 print('Thats a great region, lets figure out the details now!')
 print("")
@@ -130,6 +131,7 @@ def food_picker(destinaiton): # this is where the logic for the food will go bas
     
 
 picked_food = food_picker(picked_region)
+print("")
 print(picked_food)
 print('Great Choice, they really do have the best food in the region!')
 print("")
@@ -213,6 +215,7 @@ def travel_picker(destinaiton): # this is where the logic for the travel will go
     
 
 picked_travel = travel_picker(picked_region)
+print("")
 print (picked_travel)
 print ('Great Choice, that truly is the only way to get around!')
 print("")
@@ -290,6 +293,7 @@ def entertainment_picker(destinaiton): # this is where the logic for the enterta
                 return poke_entertainment_Galar
 
 picked_entertianment = entertainment_picker(picked_region)
+print("")
 print (picked_entertianment)
 print ('Great Choice, I hear thats only availabe to do for a short time!')
 print("")
@@ -308,13 +312,19 @@ while confirm_trip == False:
     confirm_input = input('is this acceptable? please enter y/n ')
     print("")
     if confirm_input == 'y':
-        print('Great! you will be traveling to the ' + f'{picked_region}.'+'While there you will dine at '+f'{picked_food}. ' + 'You will travel with ' + f'{picked_travel}. ' + 'Finally you will have the form of entertainment of ' + f'{picked_entertianment}. '+ 'We hope you enjoy your trip and come back to use us again!')
+        print('Great! you will be traveling to the ' + f'{picked_region} region. '+'While there you will dine at '+f'{picked_food}. ' + 'You will travel with ' + f'{picked_travel}. ' + 'Finally you will have the form of entertainment of ' + f'{picked_entertianment}. '+ 'We hope you enjoy your trip and come back to use us again!')
         confirm_trip = True        
     elif confirm_input == 'n': # If no they will be prompted to answer all the questions again to make sure they are happy with their choice.
+        print('Not a problem lets reselct your trip.')
+        print("")
         picked_region = region_picker()
+        print("")
         picked_food = food_picker(picked_region)
+        print("")
         picked_travel = travel_picker(picked_region)
+        print("")
         picked_entertianment = entertainment_picker(picked_region)
+        print("")
         print('Now that we have all of our choices lets review')
         print("")
         print('region: '+ f'{picked_region}')
