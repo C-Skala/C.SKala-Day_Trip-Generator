@@ -69,7 +69,7 @@ def food_picker(destinaiton): # this is where the logic for the food will go bas
                 food_picked = True
                 return poke_food_kanto
 
-    if destinaiton == "Jhoto": 
+    elif destinaiton == "Jhoto": 
         food_picked = False
         poke_food_Jhoto = random.choice(Jhoto_food)
         food_location = input('Now lets pick a place to eat for the day. Would you like to try ' + f'{poke_food_Jhoto}? ' + 'Please select y/n ')
@@ -84,7 +84,7 @@ def food_picker(destinaiton): # this is where the logic for the food will go bas
                 food_picked = True
                 return poke_food_Jhoto
 
-    if destinaiton == "Hoenn": 
+    elif destinaiton == "Hoenn": 
         food_picked = False
         poke_food_Hoenn = random.choice(Hoenn_food)
         food_location = input('Now lets pick a place to eat for the day. Would you like to try ' + f'{poke_food_Hoenn}? ' + 'Please select y/n ')
@@ -99,7 +99,7 @@ def food_picker(destinaiton): # this is where the logic for the food will go bas
                 food_picked = True
                 return poke_food_Hoenn
     
-    if destinaiton == "Sinnoh": 
+    elif destinaiton == "Sinnoh": 
         food_picked = False
         poke_food_Sinnoh = random.choice(Sinnoh_food)
         food_location = input('Now lets pick a place to eat for the day. Would you like to try ' + f'{poke_food_Sinnoh}? ' + 'Please select y/n ')
@@ -114,7 +114,7 @@ def food_picker(destinaiton): # this is where the logic for the food will go bas
                 food_picked = True
                 return poke_food_Sinnoh
 
-    if destinaiton == "Galar": 
+    elif destinaiton == "Galar": 
         food_picked = False
         poke_food_Galar = random.choice(Galar_food)
         food_location = input('Now lets pick a place to eat for the day. Would you like to try ' + f'{poke_food_Galar}? ' + 'Please select y/n ')
@@ -153,7 +153,7 @@ def travel_picker(destinaiton): # this is where the logic for the travel will go
                 travel_picked = True
                 return poke_travel_kanto
 
-    if destinaiton == "Jhoto": 
+    elif destinaiton == "Jhoto": 
         travel_picked = False
         poke_travel_Jhoto = random.choice(Jhoto_transport)
         travel_choice = input('Now lets see how we will get around. Would you like to try ' + f'{poke_travel_Jhoto}? ' + 'Please select y/n ')
@@ -168,7 +168,7 @@ def travel_picker(destinaiton): # this is where the logic for the travel will go
                 travel_picked = True
                 return poke_travel_Jhoto
 
-    if destinaiton == "Hoenn": 
+    elif destinaiton == "Hoenn": 
         travel_picked = False
         poke_travel_Hoenn = random.choice(Hoenn_transport)
         travel_choice = input('Now lets see how we will get around. Would you like to try ' + f'{poke_travel_Hoenn}? ' + 'Please select y/n ')
@@ -183,7 +183,7 @@ def travel_picker(destinaiton): # this is where the logic for the travel will go
                 travel_picked = True
                 return poke_travel_Hoenn
     
-    if destinaiton == "Sinnoh": 
+    elif destinaiton == "Sinnoh": 
         travel_picked = False
         poke_travel_Sinnoh = random.choice(Sinnoh_transport)
         travel_choice = input('Now lets see how we will get around. Would you like to try ' + f'{poke_travel_Sinnoh}? ' + 'Please select y/n ')
@@ -198,7 +198,7 @@ def travel_picker(destinaiton): # this is where the logic for the travel will go
                 travel_picked = True
                 return poke_travel_Sinnoh
 
-    if destinaiton == "Galar": 
+    elif destinaiton == "Galar": 
         travel_picked = False
         poke_travel_Galar = random.choice(Galar_transport)
         travel_choice = input('Now lets see how we will get around. Would you like to try ' + f'{poke_travel_Galar}? ' + 'Please select y/n ')
@@ -235,7 +235,8 @@ def entertainment_picker(destinaiton): # this is where the logic for the enterta
             if entertainment_choice == 'y':
                 entertainment_picked = True
                 return poke_entertainment_kanto
-    if destinaiton == "Jhoto": 
+    
+    elif destinaiton == "Jhoto": 
         entertainment_picked = False
         poke_entertainment_Jhoto = random.choice(Jhoto_entertainment)
         entertainment_choice = input('Now lets see what we will do for fun. How does ' + f'{poke_entertainment_Jhoto} sound? ' + 'Please select y/n ')
@@ -249,7 +250,8 @@ def entertainment_picker(destinaiton): # this is where the logic for the enterta
             if entertainment_choice == 'y':
                 entertainment_picked = True
                 return poke_entertainment_Jhoto
-    if destinaiton == "Hoenn": 
+    
+    elif destinaiton == "Hoenn": 
         entertainment_picked = False
         poke_entertainment_Hoenn = random.choice(Hoenn_entertainment)
         entertainment_choice = input('Now lets see what we will do for fun. How does ' + f'{poke_entertainment_Hoenn} sound? ' + 'Please select y/n ')
@@ -263,7 +265,8 @@ def entertainment_picker(destinaiton): # this is where the logic for the enterta
             if entertainment_choice == 'y':
                 entertainment_picked = True
                 return poke_entertainment_Hoenn
-    if destinaiton == "Sinnoh": 
+    
+    elif destinaiton == "Sinnoh": 
         entertainment_picked = False
         poke_entertainment_Sinnoh = random.choice(Sinnoh_entertainment)
         entertainment_choice = input('Now lets see what we will do for fun. How does ' + f'{poke_entertainment_Sinnoh} sound? ' + 'Please select y/n ')
@@ -277,7 +280,8 @@ def entertainment_picker(destinaiton): # this is where the logic for the enterta
             if entertainment_choice == 'y':
                 entertainment_picked = True
                 return poke_entertainment_Sinnoh
-    if destinaiton == "Galar": 
+    
+    elif destinaiton == "Galar": 
         entertainment_picked = False
         poke_entertainment_Galar = random.choice(Galar_entertainment)
         entertainment_choice = input('Now lets see what we will do for fun. How does ' + f'{poke_entertainment_Galar} sound? ' + 'Please select y/n ')
@@ -301,10 +305,18 @@ print("")
 print('Now that we have all of our choices lets review')
 print("")
 
-print('region: '+ f'{picked_region}')
-print('food: '+f'{picked_food}')
-print('transportation: '+ f'{picked_travel}')
-print('entertainment: '+ f'{picked_entertianment}')
+poke_dictionary = {
+    'region': picked_region,
+    'food' : picked_food,
+    'transportation': picked_travel,
+    'entertainment': picked_entertianment,
+}
+
+print(poke_dictionary)
+#print('region: '+ f'{picked_region}')
+#print('food: '+f'{picked_food}')
+#print('transportation: '+ f'{picked_travel}')
+#print('entertainment: '+ f'{picked_entertianment}')
 print("")
 
 confirm_trip = False
